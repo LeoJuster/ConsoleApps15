@@ -12,8 +12,13 @@ namespace ConsoleAppProject.App01
     public class DistanceConverter
     {
         public const int FEET_IN_MILES = 5280;
+
+        public const double METRES_IN_MILES = 1609.34;
+
         private double miles;
+
         private double feet;
+
 
         /// <summary>
         /// The purpose of this method is to call the other methods
@@ -45,6 +50,7 @@ namespace ConsoleAppProject.App01
             string value = Console.ReadLine();
             miles = Convert.ToDouble(value);
         }
+
         /// <summary>
         /// This is the method that converts the miles into feet
         /// </summary>
@@ -53,11 +59,14 @@ namespace ConsoleAppProject.App01
         {
             feet = miles * 5280;
         }
+
         /// <summary>
         /// This method is responsible for the output of the results
-        /// after it has been calculated
+        /// after it has been calculated.
+        /// It will print out the results at the end
         /// </summary>
-        /// 
+        ///
+
         private void OutputFeet()
         {
             Console.WriteLine(miles + " Mile is " + feet + " feet!");
