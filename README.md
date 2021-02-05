@@ -1,8 +1,8 @@
 # C# Console Applications App01 to App05
 | Author | Details |
 | ---- | ---- |
-**Name**: | Student Name  |
-**Student ID**: | 12345678 |
+**Name**: | Leo Juster  |
+**Student ID**: | 21900080 |
 **Course:** | Computing |
 **Module**: | CO453     |
 **Started**: | January 2021 |    
