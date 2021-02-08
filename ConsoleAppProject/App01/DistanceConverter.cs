@@ -89,7 +89,7 @@ namespace ConsoleAppProject.App01
 
         private void CalculateMetres()
         {
-            feet = miles * METRES_IN_MILES;
+            metres = miles * METRES_IN_MILES;
         }
 
         /// <summary>
