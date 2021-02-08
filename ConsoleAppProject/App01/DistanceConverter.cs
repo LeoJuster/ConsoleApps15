@@ -2,53 +2,75 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This class offers methods for converting a given
-    /// distance meausred in miles to the equivalent
-    /// distance measured in feet
+    /// This class allows the user to convert distnaces
+    /// between Miles, Feet and Metres
+    /// They are also allowed to choose their own combinations.
     /// </summary>
     /// <author>
     /// Leo Juster version 0.1
     /// </author>
     public class DistanceConverter
     {
+        /// <summary>
+        /// Conversions constants
+        /// </summary>
+        /// 
         public const int FEET_IN_MILES = 5280;
-
         public const double METRES_IN_MILES = 1609.34;
 
+        /// <summary>
+        /// distance variables
+        /// </summary>
+        /// 
         private double miles;
-
         private double feet;
+        private double metres;
 
 
         /// <summary>
         /// The purpose of this method is to call the other methods
         /// </summary>
-        public void Run()
+        public void MilesToFeet()
         {
-            OutputHeading();
-            InputMiles();
+            OutputHeading("Converting Miles to Feet");
+
+            miles = InputDistance("Please enter the number of miles >");
+
             CalculateFeet();
-            OutputFeet();
+
+            OutputDistance(miles, nameof(miles), feet, nameof(feet));
         }
 
-        private void OutputHeading()
+        public void FeetToMiles()
         {
-            Console.WriteLine("\n------------------------------");
-            Console.WriteLine("\n     Convert Miles to Feet    ");
-            Console.WriteLine("\n        By Leo Juster         ");
-            Console.WriteLine("\n------------------------------");
+            OutputHeading("Converting Feet to Miles");
+
+            feet = InputDistance("Please enter the number of feet >");
+
+            CalculateMiles();
+
+            OutputDistance(feet, nameof(feet), miles, nameof(miles));
+        }
+        public void MilesToMetres()
+        {
+            OutputHeading("Converting Miles to Metres");
+
+            miles = InputDistance("Please enter the number of miles >");
+            CalculateMetres();
+            OutputDistance(miles, nameof(miles), metres, nameof(metres));
         }
 
         /// <summary>
         /// Prompts the user to enter the miles.
         /// Input miles as double number
         /// </summary>
-        /// 
-        private void InputMiles()
+        ///
+
+        private double InputDistance(string prompt)
         {
-            Console.Write("Please enter the number of miles >");
+            Console.Write(prompt);
             string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
+            return Convert.ToDouble(value);
         }
 
         /// <summary>
@@ -57,7 +79,17 @@ namespace ConsoleAppProject.App01
         /// 
         private void CalculateFeet()
         {
-            feet = miles * 5280;
+            feet = miles * FEET_IN_MILES;
+        }
+
+        private void CalculateMiles()
+        {
+            feet = miles / FEET_IN_MILES;
+        }
+
+        private void CalculateMetres()
+        {
+            feet = miles * METRES_IN_MILES;
         }
 
         /// <summary>
@@ -67,9 +99,27 @@ namespace ConsoleAppProject.App01
         /// </summary>
         ///
 
-        private void OutputFeet()
+        private void OutputDistance(
+            double fromDistance, string fromUnit,
+            double toDistance, string toUnit)
         {
-            Console.WriteLine(miles + " Mile is " + feet + " feet!");
+            Console.WriteLine($" {fromDistance} {fromUnit}" +
+                $" is {toDistance} {toUnit}!");
         }
+
+        /// <summary>
+        /// This is a short descriptoon of the programme and the author of it
+        /// </summary>
+        private void OutputHeading(String prompt)
+        {
+            Console.WriteLine("\n------------------------------");
+            Console.WriteLine("\n      DISTANCE CONVERTER      ");
+            Console.WriteLine("\n        By Leo Juster         ");
+            Console.WriteLine("\n------------------------------");
+
+            Console.WriteLine(prompt);
+            Console.WriteLine();
+        }
+
     }
 }
