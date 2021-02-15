@@ -2,13 +2,14 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This class allows the user to convert distnaces
-    /// between Miles, Feet and Metres
-    /// They are also allowed to choose their own combinations.
+    /// The app iwll prompt the user to input a distance
+    /// in one unit (fromUnit) and will calculate
+    /// and output the distance in another unit (toUnit).
     /// </summary>
     /// <author>
-    /// Leo Juster version 0.1
+    /// Leo Juster version 0.3
     /// </author>
+
     public class DistanceConverter
     {
         /// <summary>
@@ -16,48 +17,117 @@ namespace ConsoleAppProject.App01
         /// </summary>
         /// 
         public const int FEET_IN_MILES = 5280;
+
         public const double METRES_IN_MILES = 1609.34;
 
-        /// <summary>
-        /// distance variables
-        /// </summary>
-        /// 
-        private double miles;
-        private double feet;
-        private double metres;
+
+        public const double FEET_IN_METRES = 3.280884;
+
+        public const string FEET = "Feet";
+        public const string METRES = "Metres";
+        public const string MILES = "Miles";
+
+        private double fromDistance;
+        private double toDistance;
+
+        private string fromUnit;
+        private string toUnit;
+
+        public DistanceConverter()
+        {
+            fromUnit = MILES;
+            toUnit = FEET;
+        }
 
 
         /// <summary>
         /// The purpose of this method is to call the other methods
         /// </summary>
-        public void MilesToFeet()
+        public void ConvertDistance()
         {
-            OutputHeading("Converting Miles to Feet");
+            OutputHeading();
 
-            miles = InputDistance("Please enter the number of miles >");
+            fromUnit = SelectUnit(" Please select the from unit distance unit >");
+            toUnit = SelectUnit(" Please select the to distance unit >");
 
-            CalculateFeet();
+            Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
 
-            OutputDistance(miles, nameof(miles), feet, nameof(feet));
+            fromDistance = InputDistance($" Please enter the number of {fromUnit} >");
+
+            CalculateDistance();
+            OutputDistance();
+        }
+                
+
+        private void CalculateDistance()
+        {
+             if (fromUnit == MILES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit == FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_IN_MILES;
+            }
+            else if (fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_IN_MILES;
+            }
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
+            else if (fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
         }
 
-        public void FeetToMiles()
+
+
+
+        private string SelectUnit(string prompt)
         {
-            OutputHeading("Converting Feet to Miles");
+            string choice = DisplayChoices(prompt);
 
-            feet = InputDistance("Please enter the number of feet >");
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have chosen {unit}");
+            return unit;
 
-            CalculateMiles();
+                }
 
-            OutputDistance(feet, nameof(feet), miles, nameof(miles));
+        private static string ExecuteChoice(string choice)
+        {
+            if (choice.Equals("1"))
+            {
+                return FEET;
+            }
+            else if (choice == "2")
+            {
+                return MILES;
+            }
+            else if (choice.Equals("3"))
+            {
+                return METRES;
+            }
+            return null;
         }
-        public void MilesToMetres()
-        {
-            OutputHeading("Converting Miles to Metres");
 
-            miles = InputDistance("Please enter the number of miles >");
-            CalculateMetres();
-            OutputDistance(miles, nameof(miles), metres, nameof(metres));
+        private static string DisplayChoices(string prompt)
+        {
+            Console.WriteLine();
+            Console.WriteLine($" 1. {FEET}");
+            Console.WriteLine($" 2. {MILES}");
+            Console.WriteLine($" 3. {METRES}");
+            Console.WriteLine();
+
+            Console.WriteLine(prompt);
+            string choice = Console.ReadLine();
+            return choice;
         }
 
         /// <summary>
@@ -74,52 +144,29 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// This is the method that converts the miles into feet
-        /// </summary>
-        /// 
-        private void CalculateFeet()
-        {
-            feet = miles * FEET_IN_MILES;
-        }
-
-        private void CalculateMiles()
-        {
-            feet = miles / FEET_IN_MILES;
-        }
-
-        private void CalculateMetres()
-        {
-            metres = miles * METRES_IN_MILES;
-        }
-
-        /// <summary>
         /// This method is responsible for the output of the results
         /// after it has been calculated.
         /// It will print out the results at the end
         /// </summary>
         ///
 
-        private void OutputDistance(
-            double fromDistance, string fromUnit,
-            double toDistance, string toUnit)
+        private void OutputDistance()
         {
-            Console.WriteLine($" {fromDistance} {fromUnit}" +
-                $" is {toDistance} {toUnit}!");
+            Console.WriteLine($"\n {fromDistance} {fromUnit}" +
+                        $" is {toDistance} {toUnit}!\n");
         }
 
         /// <summary>
         /// This is a short descriptoon of the programme and the author of it
         /// </summary>
-        private void OutputHeading(String prompt)
+        private void OutputHeading()
         {
             Console.WriteLine("\n------------------------------");
             Console.WriteLine("\n      DISTANCE CONVERTER      ");
             Console.WriteLine("\n        By Leo Juster         ");
             Console.WriteLine("\n------------------------------");
-
-            Console.WriteLine(prompt);
-            Console.WriteLine();
         }
 
     }
 }
+
