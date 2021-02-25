@@ -3,7 +3,7 @@
 | ---- | ---- |
 **Name**: | Leopold Juster  |
 **Student ID**: | 21900080 |
-**Course:** | Computing |
+**Course:** | Software Engineering |
 **Module**: | CO453     |
 **Started**: | January 2021 |    
 
