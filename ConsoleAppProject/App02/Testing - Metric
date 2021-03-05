@@ -1,0 +1,53 @@
+Last login: Fri Mar  5 06:51:23 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Leopolds-MBP:~ leopoldjuster$ bash -c 'clear; cd "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/"; "/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/DotNetCore.Debugger/Adapter/vsdbg" --interpreter=vscode --connection=/var/folders/ng/zv4rhl0n0xv7dzwm8pm6hn_c0000gn/T/CoreFxPipe_vsdbg-ui-8d9be739ff9148968f9459a034c256a7; echo $? > /var/folders/ng/zv4rhl0n0xv7dzwm8pm6hn_c0000gn/T/tmp77b4ecf4.tmp; echo; read -p "Press any key to continue..." -n1; exit'; exit
+
+
+
+
+
+
+
+
+
+
+
+
+BNU CO453 Applications Programming 2020-2021!
+
+-------------------------------------------------
+              Body Mass Index Calculator         
+                   By Leo Juster                 
+-------------------------------------------------
+ 1. Metric Units 
+ 2. Imperial Units 
+ 
+ Please enter your choice of unit > 1
+ 
+ Please enter your height to the nearest Metre and Kilogram 
+
+ Enter here your height in metres > 1.75
+ 
+ Enter your weight in KG > 90
+
+
+ Your BMI is 29.387755102040817
+ You are overweight
+ If you are Black, Asian or minority 
+ ethnic groups, you have a risk
+
+ Adults 23.0 or more are at increased risk
+ Adults 27.5 or more at high risk
+
+Press any key to continue...
+logout
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+[Process completed]
+
