@@ -21,14 +21,19 @@ namespace ConsoleAppProject.App02
         double imperialBMI;
         double metricBMI;
 
-
+        /// <summary>
+        /// This method is what will run features on the app.
+        /// </summary>
         public void Run()
         {
             OutputHeading();
             TypeOfUnit();
             ethnicMessage();
         }
-
+        /// <summary>
+        /// This method will will print the heading message
+        /// when the application is run.
+        /// </summary>
         private void OutputHeading()
         {
             Console.WriteLine("-------------------------------------------------");
@@ -37,7 +42,12 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("-------------------------------------------------");
         }
 
-
+        /// <summary>
+        /// In this method message will be printed allowing the
+        /// user to choose their Unit of choice and following will also
+        /// be messages asking for weight and height in the unit which they have
+        /// chosen to be meausre in. 
+        /// </summary>
         private void TypeOfUnit()
         {
             Console.WriteLine(" 1. Metric Units ");
@@ -86,6 +96,10 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// This method is used to work out the BMI of the
+        /// user if they chose to use the Imperial unit.
+        /// </summary>
         private void ImperialFormula()
         {
             double Pounds = weightInStones * 14;
@@ -97,11 +111,21 @@ namespace ConsoleAppProject.App02
             imperialBMI = (weightImperial * 703) / (heightImperial * heightImperial);
         }
 
+        /// <summary>
+        /// This method is used to work out the BMI of the
+        /// user if they chose to use the Metric unit.
+        /// </summary>
         private void MetricFormula()
         {
             metricBMI = (weightInKg) / (heightInMetres * heightInMetres);
         }
 
+        /// <summary>
+        /// This method will print out the results for
+        /// the user and will also tell them waht category
+        /// they are in.
+        /// </summary>
+        /// <param name="BMI"></param>
         private void BMIConditions(double BMI)
         {
             if (BMI < 18.5)
@@ -141,6 +165,11 @@ namespace ConsoleAppProject.App02
             }
         }
 
+        /// <summary>
+        /// This is an ethnic message that will print at the end
+        /// of the test to give the user of additonal information they
+        /// will need to know.
+        /// </summary>
         private void ethnicMessage()
         {
             Console.WriteLine(" If you are Black, Asian or minority \n ethnic groups, you have a risk");

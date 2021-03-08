@@ -12,6 +12,12 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        /// <summary>
+        /// This method will print the heading title.
+        /// conrol the color of the text.
+        /// And run both distance converter and BMI application.
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;

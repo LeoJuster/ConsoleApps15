@@ -58,7 +58,10 @@ namespace ConsoleAppProject.App01
             OutputDistance();
         }
                 
-
+        /// <summary>
+        /// This method calcluates the distances
+        /// depending on what they user chooses.
+        /// </summary>
         private void CalculateDistance()
         {
              if (fromUnit == MILES && toUnit == FEET)
@@ -89,7 +92,12 @@ namespace ConsoleAppProject.App01
 
 
 
-
+        /// <summary>
+        /// This method will return this message confirming
+        /// with the user the unit they have chosen.
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private string SelectUnit(string prompt)
         {
             string choice = DisplayChoices(prompt);
@@ -99,7 +107,12 @@ namespace ConsoleAppProject.App01
             return unit;
 
                 }
-
+        /// <summary>
+        /// This method is for when the user has chosen their unit
+        /// and this method will recognise their choice.
+        /// </summary>
+        /// <param name="choice"></param>
+        /// <returns></returns>
         private static string ExecuteChoice(string choice)
         {
             if (choice.Equals("1"))
@@ -117,6 +130,11 @@ namespace ConsoleAppProject.App01
             return null;
         }
 
+        /// <summary>
+        /// This method will display the user choices.
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <returns></returns>
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
