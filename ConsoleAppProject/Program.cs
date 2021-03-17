@@ -30,11 +30,11 @@ namespace ConsoleAppProject
             StudentGrades grader = new StudentGrades();
             grader.Run();
 
-           /// DistanceConverter converter = new DistanceConverter();
-            ///converter.ConvertDistance();
+           DistanceConverter converter = new DistanceConverter();
+           converter.ConvertDistance();
 
-           /// App02.BMI calculator = new App02.BMI();
-            ///calculator.Run();
+           App02.BMI calculator = new App02.BMI();
+           calculator.Run();
 
         }
     }

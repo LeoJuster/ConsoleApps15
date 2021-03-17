@@ -104,8 +104,8 @@ namespace ConsoleAppProject.App03
                 mean += Grades[i];
                 numCount++;
             }
-            Console.WriteLine("The minimum marks are " + min +
-                "\nThe maximum marks are " + max + "\nThe mean marks are " + mean / numCount);
+            Console.WriteLine("The minimum mark achieved by a student was: " + min +
+                "\nThe maximum mark achieved by a student was: " + max + "\nThe mean of all marks was: " + mean / numCount);
         }
 
     }
