@@ -105,7 +105,7 @@ namespace ConsoleAppProject.App03
                 numCount++;
             }
             Console.WriteLine("The minimum mark achieved by a student was: " + min +
-                "\nThe maximum mark achieved by a student was: " + max + "\nThe mean of all marks was: " + mean / numCount);
+                "\nThe maximum mark achieved by a student was: " + max + "\nThe mean of all marks was: " + (mean / numCount));
         }
 
     }
