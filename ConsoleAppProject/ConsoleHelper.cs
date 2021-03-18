@@ -73,7 +73,7 @@ namespace ConsoleAppProject
                 catch (Exception)
                 {
                     isValid = false;
-                    Console.WriteLine(" INVALID NUMBER!");
+                    Console.WriteLine(" THE NUMBER YOU HAVE ENTERED IS INVALID!");
                 }
 
             } while (!isValid);
