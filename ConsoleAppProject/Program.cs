@@ -27,6 +27,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.Beep();
 
+
             StudentGrades grader = new StudentGrades();
             grader.Run();
 
