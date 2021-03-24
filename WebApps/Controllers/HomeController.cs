@@ -21,6 +21,15 @@ namespace WebApps.Controllers
             return View();
         }
 
+        public IActionResult BMI()
+        {
+            return View();
+        }
+
+        public IActionResult StudentGrades()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

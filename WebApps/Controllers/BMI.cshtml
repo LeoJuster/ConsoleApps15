@@ -1,0 +1,47 @@
+@model ConsoleAppProject.App02.BMI
+@{
+    ViewData["Title"] = "BMI Calculator";
+}
+
+<h1>BMI Calculator</h1>
+
+<header class="jumbotron">
+    <h1>BMI Calculator</h1>
+    <h2>By Leo Juster</h2>
+    <p>
+        This app allows you to calulate your Body Mass Index (BMI), which can be used to classify health risks.
+    </p>
+</header>
+<section>
+    <form method="post">
+        <h2>Height</h2>
+        <p>
+            Please enetr your height using either Imperial or Metric units.
+        </p>
+        <p>
+            <input type="number" placeholder="feet" asp-for="" />
+            <input type="number" placeholder="inches" value="" />
+        </p>
+        <p>
+            <input type="number" placeholder="centimetres" value="" />
+        </p>
+    </form>
+</section>
+<section>
+    <form method="post">
+        <h2>Weight</h2>
+        <p>
+            Please enetr your height using either Imperial or Metric units.
+        </p>
+        <p>
+            <input type="number" placeholder="stones" value="" />
+            <input type="number" placeholder="pounds" value="" />
+        </p>
+        <p>
+            <input type="number" placeholder="kilograms" value="" />
+        </p>
+        <p>
+            <button class="btn btn-success" type="submit">Calculate</button>
+        </p>
+    </form>
+</section>

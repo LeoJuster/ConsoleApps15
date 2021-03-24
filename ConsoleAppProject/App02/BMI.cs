@@ -28,13 +28,13 @@ namespace ConsoleAppProject.App02
         {
             OutputHeading();
             TypeOfUnit();
-            ethnicMessage();
+            EthnicMessage();
         }
         /// <summary>
         /// This method will will print the heading message
         /// when the application is run.
         /// </summary>
-        private void OutputHeading()
+        public void OutputHeading()
         {
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("              Body Mass Index Calculator         ");
@@ -48,7 +48,7 @@ namespace ConsoleAppProject.App02
         /// be messages asking for weight and height in the unit which they have
         /// chosen to be meausre in. 
         /// </summary>
-        private void TypeOfUnit()
+        public void TypeOfUnit()
         {
             Console.WriteLine(" 1. Metric Units ");
             Console.WriteLine(" 2. Imperial Units ");
@@ -100,7 +100,7 @@ namespace ConsoleAppProject.App02
         /// This method is used to work out the BMI of the
         /// user if they chose to use the Imperial unit.
         /// </summary>
-        private void ImperialFormula()
+        public void ImperialFormula()
         {
             double Pounds = weightInStones * 14;
             weightImperial = weightInPounds + Pounds;
@@ -115,7 +115,7 @@ namespace ConsoleAppProject.App02
         /// This method is used to work out the BMI of the
         /// user if they chose to use the Metric unit.
         /// </summary>
-        private void MetricFormula()
+        public void MetricFormula()
         {
             metricBMI = (weightInKg) / (heightInMetres * heightInMetres);
         }
@@ -126,7 +126,7 @@ namespace ConsoleAppProject.App02
         /// they are in.
         /// </summary>
         /// <param name="BMI"></param>
-        private void BMIConditions(double BMI)
+        public void BMIConditions(double BMI)
         {
             if (BMI < 18.5)
             {
@@ -170,7 +170,7 @@ namespace ConsoleAppProject.App02
         /// of the test to give the user of additonal information they
         /// will need to know.
         /// </summary>
-        private void ethnicMessage()
+        public void EthnicMessage()
         {
             Console.WriteLine(" If you are Black, Asian or minority \n ethnic groups, you have a risk");
             Console.WriteLine("\n Adults 23.0 or more are at increased risk");
