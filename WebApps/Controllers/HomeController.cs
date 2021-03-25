@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using WebApps.Models;
+using ConsoleAppProject.App02;
 
 namespace WebApps.Controllers
 {
@@ -21,9 +17,26 @@ namespace WebApps.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult BMI()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult BMI(BMI bmi)
+        {
+            if (bmi.HeightInMetres > 14)
+            {
+                bmi.MetricFormula();
+            }
+            else if (bmi.HeightInFeet > 4 && bmi.WeightInStones > 6)
+            {
+                bmi.ImperialFormula();
+            }
+                return View();
+
+
         }
 
         public IActionResult StudentGrades()

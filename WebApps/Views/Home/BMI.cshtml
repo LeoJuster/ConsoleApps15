@@ -19,11 +19,11 @@
             Please enetr your height using either Imperial or Metric units.
         </p>
         <p>
-            <input type="number" placeholder="feet" asp-for="" />
-            <input type="number" placeholder="inches" value="" />
+            <input type="number" placeholder="feet" asp-for="@Model.HeightInFeet" />
+            <input type="number" placeholder="inches" asp-for="@Model.HeightInInches" />
         </p>
         <p>
-            <input type="number" placeholder="centimetres" value="" />
+            <input type="number" placeholder="metres" asp-for="@Model.HeightInMetres " />
         </p>
     </form>
 </section>
@@ -34,11 +34,11 @@
             Please enetr your height using either Imperial or Metric units.
         </p>
         <p>
-            <input type="number" placeholder="stones" value="" />
-            <input type="number" placeholder="pounds" value="" />
+            <input type="number" placeholder="stones" asp-for="@Model.WeightInStones" />
+            <input type="number" placeholder="pounds" asp-for="@Model.WeightInPounds" />
         </p>
         <p>
-            <input type="number" placeholder="kilograms" value="" />
+            <input type="number" placeholder="kilograms" asp-for="@Model.WeightInKg" />
         </p>
         <p>
             <button class="btn btn-success" type="submit">Calculate</button>

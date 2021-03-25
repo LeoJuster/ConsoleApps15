@@ -12,12 +12,12 @@ namespace ConsoleAppProject.App02
         double weightImperial;
         double heightImperial;
         string unitChoice;
-        double heightInFeet;
-        double heightInInches;
-        double heightInMetres;
-        double weightInStones;
-        double weightInPounds;
-        double weightInKg;
+        public double HeightInFeet;
+        public double HeightInInches;
+        public double HeightInMetres;
+        public double WeightInStones;
+        public double WeightInPounds;
+        public double WeightInKg;
         double imperialBMI;
         double metricBMI;
 
@@ -60,10 +60,10 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine(" \n Please enter your height to the nearest Metre and Kilogram ");
                 Console.Write("\n Enter here your height in metres > ");
                 string height = Console.ReadLine();
-                heightInMetres = Convert.ToDouble(height);
+                HeightInMetres = Convert.ToDouble(height);
                 Console.Write(" \n Enter your weight in KG > ");
                 string kg = Console.ReadLine();
-                weightInKg = Convert.ToDouble(kg);
+                WeightInKg = Convert.ToDouble(kg);
                 Console.WriteLine();
                 Console.WriteLine();
                 MetricFormula();
@@ -75,21 +75,21 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine("\n Please enter your height to the nearest foot and inch  ");
                 Console.Write("\n Enter here your height in feet > ");
                 string height = Console.ReadLine();
-                heightInFeet = Convert.ToDouble(height);
+                HeightInFeet = Convert.ToDouble(height);
 
 
                 Console.Write(" Enter here your height in inches > ");
                 string inches = Console.ReadLine();
-                heightInInches = Convert.ToDouble(inches);
+                HeightInInches = Convert.ToDouble(inches);
 
                 Console.WriteLine("\n Enter your weight to the nearest stone and pound ");
                 Console.Write("\n Enter here your weight in stones > ");
                 string stones = Console.ReadLine();
-                weightInStones = Convert.ToDouble(stones);
+                WeightInStones = Convert.ToDouble(stones);
 
                 Console.Write(" Enter here your weight in pounds> ");
                 string pounds = Console.ReadLine();
-                weightInPounds = Convert.ToDouble(pounds);
+                WeightInPounds = Convert.ToDouble(pounds);
 
                 ImperialFormula();
                 BMIConditions(imperialBMI);
@@ -102,23 +102,20 @@ namespace ConsoleAppProject.App02
         /// </summary>
         public void ImperialFormula()
         {
-            double Pounds = weightInStones * 14;
-            weightImperial = weightInPounds + Pounds;
+            double Pounds = WeightInStones * 14;
+            weightImperial = WeightInPounds + Pounds;
 
-            double inches = heightInFeet * 12;
-            heightImperial = heightInInches + inches;
+            double inches = HeightInFeet * 12;
+            heightImperial = HeightInInches + inches;
 
-            imperialBMI = (weightImperial * 703) / (heightImperial * heightImperial);
+            imperialBMI = weightImperial * 703 / (heightImperial * heightImperial);
         }
 
         /// <summary>
         /// This method is used to work out the BMI of the
         /// user if they chose to use the Metric unit.
         /// </summary>
-        public void MetricFormula()
-        {
-            metricBMI = (weightInKg) / (heightInMetres * heightInMetres);
-        }
+        public void MetricFormula() => metricBMI = WeightInKg / (HeightInMetres * HeightInMetres);
 
         /// <summary>
         /// This method will print out the results for
